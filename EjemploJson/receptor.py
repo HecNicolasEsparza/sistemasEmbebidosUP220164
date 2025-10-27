@@ -19,21 +19,11 @@ def on_connect(client, userdata, flags, rc):
 def on_message(client, userdata, msg):
     #datos = json.loads(msg.payload.decode())
     datos = msg.payload.decode()
-    temperatura = datos["temperatura"]
-    humedad = datos["humedad"]
-    luz = datos["luz"]
-    print(f"temperatura: {temperatura}  humedad: {humedad}  luz: {luz}")
+    saludo= datos["saludo"]
+    persona = datos["persona"]
+    print(f"saludo: {saludo}  persona: {persona}")
     print(datos)
-    '''
-    if temperatura > 28:
-        print("Ventilador ON")
-    
-    if humedad < 45:
-        print("Humidificador ON")
-
-    if luz == "OFF":
-        print("Encender LUZ \n")
-    '''
+   
 client = mqtt.Client()
 client.on_connect = on_connect
 client.on_message = on_message

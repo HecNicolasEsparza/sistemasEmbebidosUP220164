@@ -24,13 +24,9 @@ client.loop_start()
 try: 
     while True:
         datos = {
-            "temperatura": round(random.uniform(20.0, 30.0), 2),
-            "humedad": round(random.uniform(40.0, 60.0), 2),
-            "luz": random.choice(["ON", "OFF"]),
+            "saludo": random.choice(["hola", "quiubo", "q pedo", "ey ey ey"]),
+            "persona": random.choice(["Nico", "Elisa", "Edith", "Mauricio"])
         }
-        '''datos = {
-            "saludo": random.choice(["hola", "quiubo", "q pedo", "ey ey ey"])
-        }'''
         mensaje = json.dumps(datos)
         client.publish(topic, mensaje)
         print(f"enviado: {mensaje}")

@@ -2,12 +2,12 @@ import paho.mqtt.client as mqtt
 
 broker = "localhost"
 port = 1883
-topic = "Casa/Cuarto1/Temperatura"
+topico = "Casa/Cocina/Temp"
 
 def on_connect(client, userdata, flags, rc):
     
     temperatura = 22.5
-    client.publish(topic, str(temperatura))
+    client.publish(topico, str(temperatura))
     print("Conectado con el mosquito")
 
 
