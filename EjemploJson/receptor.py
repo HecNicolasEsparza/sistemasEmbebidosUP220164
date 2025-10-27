@@ -19,10 +19,10 @@ def on_connect(client, userdata, flags, rc):
 def on_message(client, userdata, msg):
     #datos = json.loads(msg.payload.decode())
     datos = msg.payload.decode()
-    #temperatura = datos["temperatura"]
-    #humedad = datos["humedad"]
-    #luz = datos["luz"]
-    #print(f"temperatura: {temperatura}  humedad: {humedad}  luz: {luz}")
+    temperatura = datos["temperatura"]
+    humedad = datos["humedad"]
+    luz = datos["luz"]
+    print(f"temperatura: {temperatura}  humedad: {humedad}  luz: {luz}")
     print(datos)
     '''
     if temperatura > 28:
